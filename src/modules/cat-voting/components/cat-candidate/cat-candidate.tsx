@@ -13,7 +13,7 @@ type Props = React.DetailedHTMLProps<
 };
 
 export const CatCandidate = ({ catId, ...imgProps }: Props) => {
-  const voting = useCatVoting();
+  const voting = useCatVoting(catId);
 
   const handleVote = (voteType: VoteType) => {
     voting.mutate({ voteType, imageID: catId });

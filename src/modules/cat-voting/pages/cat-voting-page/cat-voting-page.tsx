@@ -32,8 +32,12 @@ export const CatVotingPage = () => {
         )}
       </section>
 
-      <section className="mt-8 md:w-fit md:mx-auto"> 
-        <Button disabled={isFetchingNextPage} onClick={() => fetchNextPage()} className="text-center px-2 text-xl w-full bg-blue-500 text-white h-12 md:px-6">
+      <section className="mt-8 md:w-fit md:mx-auto">
+        <Button
+          disabled={isFetchingNextPage}
+          onClick={() => fetchNextPage()}
+          className="text-center px-2 text-xl w-full bg-blue-500 text-white h-12 md:px-6"
+        >
           FETCH MORE CATS
         </Button>
       </section>
