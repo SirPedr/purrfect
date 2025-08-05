@@ -1,69 +1,101 @@
-# React + TypeScript + Vite
+# Purrfect 🐱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A delightful cat voting application where users can vote on adorable cat images. Built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🐱 Browse and vote on cat images
+- 📊 Cat voting system with vote tracking
+- 🎨 Modern UI with Tailwind CSS
+- 🧪 Comprehensive testing with Vitest and React Testing Library
+- 🔥 Hot module replacement for fast development
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React 19, TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **HTTP Client**: Axios with React Query
+- **Testing**: Vitest, React Testing Library, MSW
+- **Icons**: Lucide React
+- **Notifications**: React Hot Toast
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (v18 or higher)
+- pnpm (v10.11.0+)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd purrfect
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+```bash
+pnpm install
 ```
+
+3. Start the development server:
+```bash
+pnpm dev
+```
+
+The application will be available at `http://localhost:5173`
+
+## Available Scripts
+
+- `pnpm dev` - Start the development server
+- `pnpm build` - Build for production
+- `pnpm preview` - Preview the production build
+- `pnpm test` - Run tests
+- `pnpm test:ui` - Run tests with UI
+- `pnpm lint` - Run ESLint
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── button/
+│   ├── spinner/
+│   └── text/
+├── lib/                 # Shared utilities
+│   ├── get-api-client/
+│   └── get-user-id/
+├── modules/             # Feature modules
+│   └── cat-voting/      # Cat voting feature
+│       ├── components/  # Feature-specific components
+│       ├── hooks/       # Custom hooks
+│       ├── lib/         # Feature utilities
+│       ├── pages/       # Page components
+│       └── types.ts     # Type definitions
+└── tests/               # Test setup and mocks
+    └── mocks/           # MSW mocks for testing
+```
+
+## Testing
+
+The project uses Vitest and React Testing Library for testing, with MSW for API mocking. Tests are co-located with their respective components.
+
+Run tests:
+```bash
+pnpm test
+```
+
+Run tests with UI:
+```bash
+pnpm test:ui
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
