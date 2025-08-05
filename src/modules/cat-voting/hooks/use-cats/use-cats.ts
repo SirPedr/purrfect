@@ -14,5 +14,5 @@ export const useCats = () => {
     fetchNextPage,
     isFirstLoading: status === "pending",
     isFetchingNextPage,
-  }
+  };
 };
