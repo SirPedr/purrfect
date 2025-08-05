@@ -4,7 +4,7 @@ import type { CatImage } from "../../types";
 export const fetchCatImages = async (page: number) => {
   const { data } = await getAPIClient().get<CatImage[]>("/images/search", {
     params: {
-      limit: 2,
+      limit: 10,
       page
     },
   });

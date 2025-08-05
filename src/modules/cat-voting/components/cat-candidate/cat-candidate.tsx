@@ -20,7 +20,7 @@ export const CatCandidate = ({ catId, ...imgProps }: Props) => {
   };
 
   return (
-    <figure className="border-2 shadow-brutal">
+    <figure className="border-2 shadow-brutal h-fit">
       <img {...imgProps} className="w-full" />
       <section className="p-3 border-t-2 flex gap-2">
         {voting.isSuccess ? (

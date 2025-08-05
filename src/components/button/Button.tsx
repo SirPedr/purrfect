@@ -2,7 +2,7 @@ import { Button as HUIButton } from "@headlessui/react";
 import clsx from "clsx";
 
 type Props = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLButtonElement>,
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 >;
 
@@ -11,7 +11,7 @@ export const Button = ({ children, ...props }: Props) => (
     {...props}
     className={clsx(
       props.className,
-      "flex h-9 items-center justify-center gap-1 border-2 border-black font-bold shadow-button"
+      "flex h-9 items-center justify-center gap-1 border-2 border-black font-bold shadow-button cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
     )}
   >
     {children}

@@ -1,4 +1,5 @@
 import { Button } from "../../../../components/button/Button";
+import { Spinner } from "../../../../components/spinner/Spinner";
 import { CatCandidate } from "../../components/cat-candidate/cat-candidate";
 import { useCats } from "../../hooks/use-cats/use-cats";
 
@@ -7,12 +8,16 @@ export const CatVotingPage = () => {
     useCats();
 
   if (isFirstLoading) {
-    return <h1>LOADING...</h1>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Spinner />
+      </div>
+    );
   }
 
   return (
     <main className="p-3">
-      <section className="flex flex-col gap-5">
+      <section className="columns-1 md:columns-3 lg:columns-4 gap-5 [&>*]:mb-5 [&>*]:break-inside-avoid">
         {catImages?.pages.map((imageGroup, groupIndex) =>
           imageGroup.map((catImage, index) => (
             <CatCandidate
@@ -27,11 +32,10 @@ export const CatVotingPage = () => {
         )}
       </section>
 
-      <section className="mt-5"> 
-        <Button onClick={() => fetchNextPage()} className="text-center text-xl w-full bg-blue-500 text-white h-12">
+      <section className="mt-8 md:w-fit md:mx-auto"> 
+        <Button disabled={isFetchingNextPage} onClick={() => fetchNextPage()} className="text-center px-2 text-xl w-full bg-blue-500 text-white h-12 md:px-6">
           FETCH MORE CATS
         </Button>
-        {isFetchingNextPage && <p>Loading more...</p>}
       </section>
     </main>
   );
